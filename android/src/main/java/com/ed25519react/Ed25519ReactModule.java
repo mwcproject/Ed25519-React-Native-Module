@@ -27,7 +27,7 @@ public class Ed25519ReactModule extends ReactContextBaseJavaModule {
 		try {
 		
 			// Load library
-			System.loadLibrary("cpp");
+			System.loadLibrary("Ed25519React");
 		}
 		
 		// Catch errors
