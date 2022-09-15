@@ -144,7 +144,7 @@ RCT_EXPORT_METHOD(sign:(nonnull NSString *)message
 		const vector<uint8_t> publicKeyData = fromHexString(publicKey);
 
 		// Resolve if signature verified message
-		resolve(verify(messageData.data(), messageData.size(), signatureData.data(), signatureData.size(), publicKeyData.data(), publicKeyData.size()) ? YES : NO);
+		resolve([NSNumber numberWithBool:verify(messageData.data(), messageData.size(), signatureData.data(), signatureData.size(), publicKeyData.data(), publicKeyData.size()) ? YES : NO]);
 	}
 
 	// Catch errors

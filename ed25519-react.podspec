@@ -16,11 +16,16 @@ Pod::Spec.new do |s|
 
   s.source_files = "ios/**/*.{h,m,mm}", "cpp/**/*.{h,cpp}", "Ed25519-WASM-Wrapper-master/**/*.{h,c}", "supercop-20220213/**/*.{h,c}"
 
+  s.pod_target_xcconfig = {
+    "HEADER_SEARCH_PATHS" => "\"$(PODS_TARGET_SRCROOT)/Ed25519-WASM-Wrapper-master\" \"$(PODS_TARGET_SRCROOT)/supercop-20220213/crypto_sign/ed25519/ref10\"",
+    "GCC_PREPROCESSOR_DEFINITIONS" => "$(inherited) CRYPTO_NAMESPACE\(x\)=x"
+  }
+
   s.dependency "React-Core"
 
   # Don't install the dependencies when we run `pod install` in the old architecture.
   if ENV['RCT_NEW_ARCH_ENABLED'] == '1' then
-    s.compiler_flags = folly_compiler_flags + " -DRCT_NEW_ARCH_ENABLED=1 -D CRYPTO_NAMESPACE\(x\)=x"
+    s.compiler_flags = folly_compiler_flags + " -DRCT_NEW_ARCH_ENABLED=1 -DCRYPTO_NAMESPACE\(x\)=x"
     s.pod_target_xcconfig    = {
         "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/boost\" \"$(PODS_TARGET_SRCROOT)/Ed25519-WASM-Wrapper-master\" \"$(PODS_TARGET_SRCROOT)/supercop-20220213/crypto_sign/ed25519/ref10\"",
         "CLANG_CXX_LANGUAGE_STANDARD" => "c++17"
