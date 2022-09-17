@@ -37,6 +37,9 @@ static jstring toHexString(JNIEnv *environment, const vector<uint8_t> &input);
 // Character to number
 static uint8_t characterToNumber(char character);
 
+// To bool
+static jboolean toBool(bool input);
+
 
 // Supporting function implementation
 
@@ -115,7 +118,7 @@ jboolean Java_com_ed25519react_Ed25519ReactModule_nativeVerify(JNIEnv *environme
 		const vector<uint8_t> publicKeyData = fromHexString(environment, publicKey);
 
 		// Return if signature verified message
-		return verify(messageData.data(), messageData.size(), signatureData.data(), signatureData.size(), publicKeyData.data(), publicKeyData.size()) ? JNI_TRUE : JNI_FALSE;
+		return toBool(verify(messageData.data(), messageData.size(), signatureData.data(), signatureData.size(), publicKeyData.data(), publicKeyData.size()));
 	}
 	
 	// Catch errors
@@ -317,4 +320,11 @@ uint8_t characterToNumber(char character) {
 			// Throw error
 			throw runtime_error("Getting character as a number failed");
 	}
+}
+
+// To bool
+jboolean toBool(bool input) {
+
+	// Return input as a bool
+	return input ? JNI_TRUE : JNI_FALSE;
 }
