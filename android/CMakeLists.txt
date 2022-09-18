@@ -7,9 +7,9 @@ add_library(Ed25519React
             SHARED
             ../cpp/ed25519-react.cpp
             cpp-adapter.cpp
-            ../Ed25519-WASM-Wrapper-master/crypto_hash_sha512.c
-            ../Ed25519-WASM-Wrapper-master/crypto_verify_32.c
-            ../Ed25519-WASM-Wrapper-master/randombytes.c
+            ../Ed25519-NPM-Package-master/crypto_hash_sha512.c
+            ../Ed25519-NPM-Package-master/crypto_verify_32.c
+            ../Ed25519-NPM-Package-master/randombytes.c
             ../supercop-20220213/crypto_sign/ed25519/ref10/fe_0.c
             ../supercop-20220213/crypto_sign/ed25519/ref10/fe_1.c
             ../supercop-20220213/crypto_sign/ed25519/ref10/fe_add.c
@@ -53,7 +53,7 @@ add_library(Ed25519React
 
 include_directories(
             ../cpp
-            ../Ed25519-WASM-Wrapper-master
+            ../Ed25519-NPM-Package-master
             ../supercop-20220213/crypto_sign/ed25519/ref10
 )
 

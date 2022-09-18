@@ -5,7 +5,7 @@
 namespace Ed25519 {
 
 	// Header files
-	#include "../Ed25519-WASM-Wrapper-master/main.cpp"
+	#include "../Ed25519-NPM-Package-master/main.cpp"
 }
 
 using namespace std;

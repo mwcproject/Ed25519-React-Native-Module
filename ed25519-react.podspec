@@ -14,10 +14,10 @@ Pod::Spec.new do |s|
   s.platforms    = { :ios => "10.0" }
   s.source       = { :git => "https://github.com/NicolasFlamel1/Ed25519-React-Native-Module.git", :tag => "#{s.version}" }
 
-  s.source_files = "ios/**/*.{h,m,mm}", "cpp/**/*.{h,cpp}", "Ed25519-WASM-Wrapper-master/**/*.{h,c}", "supercop-20220213/**/*.{h,c}"
+  s.source_files = "ios/**/*.{h,m,mm}", "cpp/**/*.{h,cpp}", "Ed25519-NPM-Package-master/**/*.{h,c}", "supercop-20220213/**/*.{h,c}"
 
   s.pod_target_xcconfig = {
-    "HEADER_SEARCH_PATHS" => "\"$(PODS_TARGET_SRCROOT)/Ed25519-WASM-Wrapper-master\" \"$(PODS_TARGET_SRCROOT)/supercop-20220213/crypto_sign/ed25519/ref10\"",
+    "HEADER_SEARCH_PATHS" => "\"$(PODS_TARGET_SRCROOT)/Ed25519-NPM-Package-master\" \"$(PODS_TARGET_SRCROOT)/supercop-20220213/crypto_sign/ed25519/ref10\"",
     "GCC_PREPROCESSOR_DEFINITIONS" => "$(inherited) CRYPTO_NAMESPACE\(x\)=x"
   }
 
@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
   if ENV['RCT_NEW_ARCH_ENABLED'] == '1' then
     s.compiler_flags = folly_compiler_flags + " -DRCT_NEW_ARCH_ENABLED=1 -DCRYPTO_NAMESPACE\(x\)=x"
     s.pod_target_xcconfig    = {
-        "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/boost\" \"$(PODS_TARGET_SRCROOT)/Ed25519-WASM-Wrapper-master\" \"$(PODS_TARGET_SRCROOT)/supercop-20220213/crypto_sign/ed25519/ref10\"",
+        "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/boost\" \"$(PODS_TARGET_SRCROOT)/Ed25519-NPM-Package-master\" \"$(PODS_TARGET_SRCROOT)/supercop-20220213/crypto_sign/ed25519/ref10\"",
         "CLANG_CXX_LANGUAGE_STANDARD" => "c++17"
     }
 
