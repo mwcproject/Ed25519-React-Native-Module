@@ -1,14 +1,15 @@
 // Header files
 #include "./ed25519-react.h"
 
+using namespace std;
+
+
 // Ed25519 namespace
 namespace Ed25519 {
 
 	// Header files
 	#include "../Ed25519-NPM-Package-master/main.cpp"
 }
-
-using namespace std;
 
 
 // Supporting function implementation
