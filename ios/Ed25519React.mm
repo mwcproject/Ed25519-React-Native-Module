@@ -127,7 +127,7 @@ RCT_EXPORT_METHOD(sign:(nonnull NSString *)message
 }
 
 // Verify
-RCT_EXPORT_METHOD(sign:(nonnull NSString *)message
+RCT_EXPORT_METHOD(verify:(nonnull NSString *)message
 	withSignature:(nonnull NSString *)signature
 	withPublicKey:(nonnull NSString *)publicKey
 	withResolver:(RCTPromiseResolveBlock)resolve
