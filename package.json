@@ -1,5 +1,5 @@
 {
-	"name": "@nicolasflamel/ed25519-react",
+	"name": "@mwcproject/ed25519-react",
 	"version": "0.0.9",
 	"description": "React Native module for parts of SUPERCOP's Ed25519 implementation",
 	"react-native": "src/index",
@@ -17,11 +17,11 @@
 		"typescript": "tsc --noEmit",
 		"prepare": "bob build",
 		"bootstrap": "yarn",
-		"prepublishOnly": "wget \"https://bench.cr.yp.to/supercop/supercop-20220213.tar.xz\" && unxz < \"./supercop-20220213.tar.xz\" | tar -xf - && rm \"./supercop-20220213.tar.xz\" && sed -i 's/static const unsigned char zero\\[32\\];/static const unsigned char zero[32] = {0};/g' \"./supercop-20220213/crypto_sign/ed25519/ref10/fe_isnonzero.c\" && find \"./supercop-20220213/\" -mindepth 1 -maxdepth 1 ! -name \"crypto_sign\" -exec rm -rf {} + && find \"./supercop-20220213/crypto_sign/\" -mindepth 1 -maxdepth 1 ! -name \"ed25519\" -exec rm -rf {} + && find \"./supercop-20220213/crypto_sign/ed25519/\" -mindepth 1 -maxdepth 1 ! -name \"ref10\" -exec rm -rf {} + && wget \"https://github.com/NicolasFlamel1/Ed25519-NPM-Package/archive/refs/heads/master.zip\" && unzip \"./master.zip\" && rm \"./master.zip\" && sed -i 's/explicit_bzero(\\(.*\\),/memset(\\1, 0,/g' \"./Ed25519-NPM-Package-master/main.cpp\" && find \"./Ed25519-NPM-Package-master/\" -mindepth 1 ! -name \"*.cpp\" ! -name \"*.c\" ! -name \"*.h\" -exec rm -rf {} +"
+		"prepublishOnly": "wget \"https://bench.cr.yp.to/supercop/supercop-20220213.tar.xz\" && unxz < \"./supercop-20220213.tar.xz\" | tar -xf - && rm \"./supercop-20220213.tar.xz\" && sed -i 's/static const unsigned char zero\\[32\\];/static const unsigned char zero[32] = {0};/g' \"./supercop-20220213/crypto_sign/ed25519/ref10/fe_isnonzero.c\" && find \"./supercop-20220213/\" -mindepth 1 -maxdepth 1 ! -name \"crypto_sign\" -exec rm -rf {} + && find \"./supercop-20220213/crypto_sign/\" -mindepth 1 -maxdepth 1 ! -name \"ed25519\" -exec rm -rf {} + && find \"./supercop-20220213/crypto_sign/ed25519/\" -mindepth 1 -maxdepth 1 ! -name \"ref10\" -exec rm -rf {} + && wget \"https://github.com/mwcproject/Ed25519-NPM-Package/archive/refs/heads/master.zip\" && unzip \"./master.zip\" && rm \"./master.zip\" && sed -i 's/explicit_bzero(\\(.*\\),/memset(\\1, 0,/g' \"./Ed25519-NPM-Package-master/main.cpp\" && find \"./Ed25519-NPM-Package-master/\" -mindepth 1 ! -name \"*.cpp\" ! -name \"*.c\" ! -name \"*.h\" -exec rm -rf {} +"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/NicolasFlamel1/Ed25519-React-Native-Module.git"
+		"url": "git+https://github.com/mwcproject/Ed25519-React-Native-Module.git"
 	},
 	"keywords": [
 		"Ed25519"
@@ -29,9 +29,9 @@
 	"author": "Nicolas Flamel",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/NicolasFlamel1/Ed25519-React-Native-Module/issues"
+		"url": "https://github.com/mwcproject/Ed25519-React-Native-Module/issues"
 	},
-	"homepage": "https://github.com/NicolasFlamel1/Ed25519-React-Native-Module#readme",
+	"homepage": "https://github.com/mwcproject/Ed25519-React-Native-Module#readme",
 	"devDependencies": {
 		"@types/react": "~17.0.21",
 		"@types/react-native": "0.68.0",

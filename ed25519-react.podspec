@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.authors      = package["author"]
 
   s.platforms    = { :ios => "10.0" }
-  s.source       = { :git => "https://github.com/NicolasFlamel1/Ed25519-React-Native-Module.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/mwcproject/Ed25519-React-Native-Module.git", :tag => "#{s.version}" }
 
   s.source_files = "ios/**/*.{h,m,mm}", "cpp/**/*.{h,cpp}", "Ed25519-NPM-Package-master/**/*.{h,c}", "supercop-20220213/**/*.{h,c}"
 

@@ -7,7 +7,7 @@ import { Buffer } from "buffer";
 if(!NativeModules.Ed25519React) {
 
 	// Throw error
-	throw new Error("The package '@nicolasflamel/ed25519-react' doesn't seem to be linked. Make sure: \n\n" + Platform.select({
+	throw new Error("The package '@mwcproject/ed25519-react' doesn't seem to be linked. Make sure: \n\n" + Platform.select({
 		ios: "- You have run 'pod install'\n",
 		default: ""
 	}) + "- You rebuilt the app after installing the package\n- You are not using Expo managed workflow\n");
